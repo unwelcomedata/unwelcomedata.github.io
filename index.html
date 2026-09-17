@@ -104,7 +104,7 @@
     background: var(--white);
     border: 1px solid var(--gray-light);
     border-radius: 10px;
-    padding: 20px;
+    overflow: hidden;
     transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   }
   .card:hover {
@@ -112,6 +112,16 @@
     box-shadow: 0 8px 22px rgba(0,48,73,0.10);
     border-color: var(--cyan);
   }
+  /* Chart thumbnail: full-bleed 16:9 preview at the top of each card */
+  .card-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--ice);
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .card .card-body { padding: 20px; }
   .card .tier {
     display: inline-block;
     font-size: 11px;
@@ -248,38 +258,53 @@
     <div class="grid">
 
       <a class="card" href="https://unwelcomedata.github.io/state-migration/">
-        <span class="tier serious">Serious</span>
-        <h3>State-to-State Migration</h3>
-        <p>Where Americans are actually moving — and the income that moves with them. IRS + Census data.</p>
-        <div class="go">Explore →</div>
+        <img class="card-thumb" src="thumbs/state-migration.png" alt="Diverging bar chart of net migration by U.S. state in 2023, green bars for the states gaining the most people and red bars for those losing the most." loading="lazy">
+        <div class="card-body">
+          <span class="tier serious">Serious</span>
+          <h3>State-to-State Migration</h3>
+          <p>Where Americans are actually moving — and the income that moves with them. IRS + Census data.</p>
+          <div class="go">Explore →</div>
+        </div>
       </a>
 
       <a class="card" href="https://unwelcomedata.github.io/dui-by-state/">
-        <span class="tier serious">Serious</span>
-        <h3>DUI by State</h3>
-        <p>How DUI enforcement, penalties, and outcomes compare across all 51 states. FARS + official sources.</p>
-        <div class="go">Explore →</div>
+        <img class="card-thumb" src="thumbs/dui-by-state.png" alt="U.S. choropleth map coloring each state by how many DUI convictions trigger a felony charge, from always a misdemeanor up to felony on the fourth offense." loading="lazy">
+        <div class="card-body">
+          <span class="tier serious">Serious</span>
+          <h3>DUI by State</h3>
+          <p>How DUI enforcement, penalties, and outcomes compare across all 51 states. FARS + official sources.</p>
+          <div class="go">Explore →</div>
+        </div>
       </a>
 
       <a class="card" href="https://unwelcomedata.github.io/abortion-cause-of-death/">
-        <span class="tier serious">Serious</span>
-        <h3>Abortion as a Cause of Death</h3>
-        <p>How abortion compares to leading causes of death, by group. CDC WONDER + Guttmacher.</p>
-        <div class="go">Explore →</div>
+        <img class="card-thumb" src="thumbs/abortion-cause-of-death.png" alt="Three side-by-side ranked bar charts comparing the leading causes of death for White, Black, and Hispanic Americans." loading="lazy">
+        <div class="card-body">
+          <span class="tier serious">Serious</span>
+          <h3>Abortion as a Cause of Death</h3>
+          <p>How abortion compares to leading causes of death, by group. CDC WONDER + Guttmacher.</p>
+          <div class="go">Explore →</div>
+        </div>
       </a>
 
       <a class="card" href="https://unwelcomedata.github.io/highest-grossing-films/">
-        <span class="tier fun">Fun</span>
-        <h3>Highest-Grossing Films</h3>
-        <p>"Highest-grossing" depends on how you count. Box office through three different lenses.</p>
-        <div class="go">Explore →</div>
+        <img class="card-thumb" src="thumbs/highest-grossing-films.png" alt="Stacked bar chart of the top U.S.-produced films by worldwide gross, each bar split into the share earned at home versus abroad." loading="lazy">
+        <div class="card-body">
+          <span class="tier fun">Fun</span>
+          <h3>Highest-Grossing Films</h3>
+          <p>"Highest-grossing" depends on how you count. Box office through three different lenses.</p>
+          <div class="go">Explore →</div>
+        </div>
       </a>
 
       <a class="card" href="https://unwelcomedata.github.io/taskmaster/">
-        <span class="tier fun">Fun</span>
-        <h3>Taskmaster: Who Really Dominated?</h3>
-        <p>Contestant performance across 21 series, normalized so short and long series compare fairly.</p>
-        <div class="go">Explore →</div>
+        <img class="card-thumb" src="thumbs/taskmaster.png" alt="Ranked bar chart of the 20 most dominant Taskmaster contestant runs by share of series points, colored teal for series winners and red for non-winners." loading="lazy">
+        <div class="card-body">
+          <span class="tier fun">Fun</span>
+          <h3>Taskmaster: Who Really Dominated?</h3>
+          <p>Contestant performance across 21 series, normalized so short and long series compare fairly.</p>
+          <div class="go">Explore →</div>
+        </div>
       </a>
 
     </div>
