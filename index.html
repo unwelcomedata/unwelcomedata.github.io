@@ -174,6 +174,12 @@
     transition: background 0.12s ease, color 0.12s ease;
   }
   .follow-btn:hover { background: var(--caramel); color: var(--white); }
+  .follow-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .signup-form {
     display: flex;
     gap: 10px;
@@ -317,10 +323,13 @@
       <h2>Follow along</h2>
       <p>
         New charts get posted as they're finished — some thought-provoking, some
-        just fun. Follow to catch them. A proper newsletter may come later; for
-        now the best place to keep up is the feed.
+        just fun. Follow on either feed to catch them. A proper newsletter may
+        come later; for now the feeds are the best place to keep up.
       </p>
-      <a class="follow-btn" href="https://bsky.app/profile/unwelcomedata.bsky.social">Follow @unwelcomedata on Bluesky</a>
+      <div class="follow-btns">
+        <a class="follow-btn" href="https://bsky.app/profile/unwelcomedata.bsky.social">Follow @unwelcomedata on Bluesky</a>
+        <a class="follow-btn" href="https://x.com/unwelcomedata">Follow @unwelcomedata on X</a>
+      </div>
       <p class="signup-note">No email list yet — nothing to sign up for, nothing to unsubscribe from.</p>
     </div>
   </div>
