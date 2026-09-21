@@ -91,7 +91,16 @@
     font-size: 16px;
   }
 
-  /* ── Project carousel (3-up, scroll forward/back) ── */
+  /* ── Project carousels (a Serious row + a Fun row, each 3-up, scroll forward/back) ── */
+  .row-label {
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gray);
+    margin: 8px 0 16px;
+  }
+  section > .wrap > .carousel + .row-label { margin-top: 44px; }
   .carousel { position: relative; }
   .carousel-viewport { overflow: hidden; }
   .carousel-track {
@@ -328,86 +337,102 @@
   <div class="wrap">
     <h2>The projects</h2>
     <p class="section-sub">Every project is public: charts, the underlying data, and where it came from.</p>
-    <div class="carousel">
+
+    <!-- ── Serious row ── -->
+    <h3 class="row-label">Serious</h3>
+    <div class="carousel" data-carousel>
       <div class="carousel-viewport">
-        <div class="carousel-track" id="projectTrack">
+        <div class="carousel-track">
 
-      <a class="card" href="https://unwelcomedata.github.io/state-migration/">
-        <img class="card-thumb" src="thumbs/state-migration.png" alt="Diverging bar chart of net migration by U.S. state in 2023, green bars for the states gaining the most people and red bars for those losing the most." loading="lazy">
-        <div class="card-body">
-          <span class="tier serious">Serious</span>
-          <h3>State-to-State Migration</h3>
-          <p>Where Americans are actually moving — and the income that moves with them. IRS + Census data.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
+          <a class="card" href="https://unwelcomedata.github.io/state-migration/">
+            <img class="card-thumb" src="thumbs/state-migration.png" alt="Diverging bar chart of net migration by U.S. state in 2023, green bars for the states gaining the most people and red bars for those losing the most." loading="lazy">
+            <div class="card-body">
+              <span class="tier serious">Serious</span>
+              <h3>State-to-State Migration</h3>
+              <p>Where Americans are actually moving — and the income that moves with them. IRS + Census data.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
 
-      <a class="card" href="https://unwelcomedata.github.io/dui-by-state/">
-        <img class="card-thumb" src="thumbs/dui-by-state.png" alt="U.S. choropleth map coloring each state by how many DUI convictions trigger a felony charge, from always a misdemeanor up to felony on the fourth offense." loading="lazy">
-        <div class="card-body">
-          <span class="tier serious">Serious</span>
-          <h3>DUI by State</h3>
-          <p>How DUI enforcement, penalties, and outcomes compare across all 51 states. FARS + official sources.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
+          <a class="card" href="https://unwelcomedata.github.io/dui-by-state/">
+            <img class="card-thumb" src="thumbs/dui-by-state.png" alt="U.S. choropleth map coloring each state by how many DUI convictions trigger a felony charge, from always a misdemeanor up to felony on the fourth offense." loading="lazy">
+            <div class="card-body">
+              <span class="tier serious">Serious</span>
+              <h3>DUI by State</h3>
+              <p>How DUI enforcement, penalties, and outcomes compare across all 51 states. FARS + official sources.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
 
-      <a class="card" href="https://unwelcomedata.github.io/abortion-cause-of-death/">
-        <img class="card-thumb" src="thumbs/abortion-cause-of-death.png" alt="Bar chart of the leading U.S. causes of death with abortion inserted at the top at about 1.12 million, above heart disease and cancer." loading="lazy">
-        <div class="card-body">
-          <span class="tier serious">Serious</span>
-          <h3>Abortion as a Cause of Death</h3>
-          <p>How abortion compares to leading causes of death, by group. CDC WONDER + Guttmacher.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
-
-      <a class="card" href="https://unwelcomedata.github.io/highest-grossing-films/">
-        <img class="card-thumb" src="thumbs/highest-grossing-films.png" alt="Stacked bar chart of the top U.S.-produced films by worldwide gross, each bar split into the share earned at home versus abroad." loading="lazy">
-        <div class="card-body">
-          <span class="tier fun">Fun</span>
-          <h3>Highest-Grossing Films</h3>
-          <p>"Highest-grossing" depends on how you count. Box office through three different lenses.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
-
-      <a class="card" href="https://unwelcomedata.github.io/taskmaster/">
-        <img class="card-thumb" src="thumbs/taskmaster.png" alt="Ranked bar chart of the 20 most dominant Taskmaster contestant runs by share of series points, colored teal for series winners and red for non-winners." loading="lazy">
-        <div class="card-body">
-          <span class="tier fun">Fun</span>
-          <h3>Taskmaster: Who Really Dominated?</h3>
-          <p>Contestant performance across 21 series, normalized so short and long series compare fairly.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
-
-      <a class="card" href="https://unwelcomedata.github.io/marvel/">
-        <img class="card-thumb" src="thumbs/marvel.png" alt="Treemap of Marvel Cinematic Universe films, each tile sized by its worldwide box office and grouped into colored blocks by Phase, with Avengers: Endgame the largest tile." loading="lazy">
-        <div class="card-body">
-          <span class="tier fun">Fun</span>
-          <h3>The Marvel Cinematic Universe by Box Office</h3>
-          <p>$34.8B across 38 films, sized and grouped by Phase and Saga — which era really carried the franchise.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
-
-      <a class="card" href="https://unwelcomedata.github.io/video-game-scores/">
-        <img class="card-thumb" src="thumbs/video-game-scores.png" alt="Scatter plot of video games by IGDB user rating versus critic rating, a dense teal cloud along the agreement line with a dozen isolated games highlighted in rust and labelled." loading="lazy">
-        <div class="card-body">
-          <span class="tier fun">Fun</span>
-          <h3>The Shape of Video Game Review Scores</h3>
-          <p>6,005 games from IGDB — how critic and user scores are distributed, how they've moved, and where the two disagree.</p>
-          <div class="go">Explore →</div>
-        </div>
-      </a>
+          <a class="card" href="https://unwelcomedata.github.io/abortion-cause-of-death/">
+            <img class="card-thumb" src="thumbs/abortion-cause-of-death.png" alt="Bar chart of the leading U.S. causes of death with abortion inserted at the top at about 1.12 million, above heart disease and cancer." loading="lazy">
+            <div class="card-body">
+              <span class="tier serious">Serious</span>
+              <h3>Abortion as a Cause of Death</h3>
+              <p>How abortion compares to leading causes of death, by group. CDC WONDER + Guttmacher.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
 
         </div><!-- /carousel-track -->
       </div><!-- /carousel-viewport -->
-      <button class="carousel-btn prev" aria-label="Previous projects">&#8249;</button>
-      <button class="carousel-btn next" aria-label="Next projects">&#8250;</button>
+      <button class="carousel-btn prev" aria-label="Previous serious projects">&#8249;</button>
+      <button class="carousel-btn next" aria-label="Next serious projects">&#8250;</button>
+      <div class="carousel-dots" role="tablist" aria-label="Serious project pages"></div>
     </div><!-- /carousel -->
-    <div class="carousel-dots" role="tablist" aria-label="Project pages"></div>
+
+    <!-- ── Fun row ── -->
+    <h3 class="row-label">Fun</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+
+          <a class="card" href="https://unwelcomedata.github.io/highest-grossing-films/">
+            <img class="card-thumb" src="thumbs/highest-grossing-films.png" alt="Stacked bar chart of the top U.S.-produced films by worldwide gross, each bar split into the share earned at home versus abroad." loading="lazy">
+            <div class="card-body">
+              <span class="tier fun">Fun</span>
+              <h3>Highest-Grossing Films</h3>
+              <p>"Highest-grossing" depends on how you count. Box office through three different lenses.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
+
+          <a class="card" href="https://unwelcomedata.github.io/taskmaster/">
+            <img class="card-thumb" src="thumbs/taskmaster.png" alt="Ranked bar chart of the 20 most dominant Taskmaster contestant runs by share of series points, colored teal for series winners and red for non-winners." loading="lazy">
+            <div class="card-body">
+              <span class="tier fun">Fun</span>
+              <h3>Taskmaster: Who Really Dominated?</h3>
+              <p>Contestant performance across 21 series, normalized so short and long series compare fairly.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
+
+          <a class="card" href="https://unwelcomedata.github.io/marvel/">
+            <img class="card-thumb" src="thumbs/marvel.png" alt="Treemap of Marvel Cinematic Universe films, each tile sized by its worldwide box office and grouped into colored blocks by Phase, with Avengers: Endgame the largest tile." loading="lazy">
+            <div class="card-body">
+              <span class="tier fun">Fun</span>
+              <h3>The Marvel Cinematic Universe by Box Office</h3>
+              <p>$34.8B across 38 films, sized and grouped by Phase and Saga — which era really carried the franchise.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
+
+          <a class="card" href="https://unwelcomedata.github.io/video-game-scores/">
+            <img class="card-thumb" src="thumbs/video-game-scores.png" alt="Scatter plot of video games by IGDB user rating versus critic rating, a dense teal cloud along the agreement line with a dozen isolated games highlighted in rust and labelled." loading="lazy">
+            <div class="card-body">
+              <span class="tier fun">Fun</span>
+              <h3>The Shape of Video Game Review Scores</h3>
+              <p>6,005 games from IGDB — how critic and user scores are distributed, how they've moved, and where the two disagree.</p>
+              <div class="go">Explore →</div>
+            </div>
+          </a>
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-viewport -->
+      <button class="carousel-btn prev" aria-label="Previous fun projects">&#8249;</button>
+      <button class="carousel-btn next" aria-label="Next fun projects">&#8250;</button>
+      <div class="carousel-dots" role="tablist" aria-label="Fun project pages"></div>
+    </div><!-- /carousel -->
   </div>
 </section>
 
@@ -458,78 +483,90 @@
 
 <script>
 (function () {
-  var track = document.getElementById('projectTrack');
-  if (!track) return;
-  var viewport = track.parentElement;
-  var carousel = viewport.parentElement;
-  var prevBtn = carousel.querySelector('.carousel-btn.prev');
-  var nextBtn = carousel.querySelector('.carousel-btn.next');
-  var dotsWrap = carousel.parentElement.querySelector('.carousel-dots');
-  var cards = Array.prototype.slice.call(track.querySelectorAll('.card'));
-  var page = 0;
+  // Initialize every [data-carousel] independently (the Serious row + the Fun row).
+  function initCarousel(carousel) {
+    var viewport = carousel.querySelector('.carousel-viewport');
+    var track = carousel.querySelector('.carousel-track');
+    var prevBtn = carousel.querySelector('.carousel-btn.prev');
+    var nextBtn = carousel.querySelector('.carousel-btn.next');
+    var dotsWrap = carousel.querySelector('.carousel-dots');
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.card'));
+    if (!cards.length) return;
+    var page = 0;
 
-  // How many whole cards fit in the viewport right now (1, 2, or 3).
-  function perView() {
-    if (!cards.length) return 1;
-    var cardW = cards[0].getBoundingClientRect().width;
-    var gap = parseFloat(getComputedStyle(track).gap) || 0;
-    var n = Math.round((viewport.clientWidth + gap) / (cardW + gap));
-    return Math.max(1, Math.min(n, cards.length));
-  }
-  function pageCount() { return Math.max(1, Math.ceil(cards.length / perView())); }
-
-  function render() {
-    var pv = perView();
-    var pages = pageCount();
-    if (page > pages - 1) page = pages - 1;
-    if (page < 0) page = 0;
-
-    // Shift the track by whole pages. Snap the last page to the end so the final
-    // cards aren't clipped when the count isn't a clean multiple of perView.
-    var cardW = cards[0].getBoundingClientRect().width;
-    var gap = parseFloat(getComputedStyle(track).gap) || 0;
-    var step = pv * (cardW + gap);
-    var maxShift = Math.max(0, track.scrollWidth - viewport.clientWidth);
-    var shift = Math.min(page * step, maxShift);
-    track.style.transform = 'translateX(' + (-shift) + 'px)';
-
-    prevBtn.disabled = (page === 0);
-    nextBtn.disabled = (page >= pages - 1);
-
-    // Rebuild dots to match the current page count.
-    if (dotsWrap.childElementCount !== pages) {
-      dotsWrap.innerHTML = '';
-      for (var i = 0; i < pages; i++) {
-        var d = document.createElement('button');
-        d.setAttribute('role', 'tab');
-        d.setAttribute('aria-label', 'Go to project page ' + (i + 1));
-        (function (idx) { d.addEventListener('click', function () { page = idx; render(); }); })(i);
-        dotsWrap.appendChild(d);
-      }
+    // How many whole cards fit in the viewport right now (1, 2, or 3).
+    function perView() {
+      var cardW = cards[0].getBoundingClientRect().width;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var n = Math.round((viewport.clientWidth + gap) / (cardW + gap));
+      return Math.max(1, Math.min(n, cards.length));
     }
-    Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
-      d.classList.toggle('active', i === page);
-      d.setAttribute('aria-selected', i === page ? 'true' : 'false');
+    function pageCount() { return Math.max(1, Math.ceil(cards.length / perView())); }
+
+    function render() {
+      var pv = perView();
+      var pages = pageCount();
+      if (page > pages - 1) page = pages - 1;
+      if (page < 0) page = 0;
+
+      // Shift the track by whole pages. Snap the last page to the end so the final
+      // cards aren't clipped when the count isn't a clean multiple of perView.
+      var cardW = cards[0].getBoundingClientRect().width;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var step = pv * (cardW + gap);
+      var maxShift = Math.max(0, track.scrollWidth - viewport.clientWidth);
+      var shift = Math.min(page * step, maxShift);
+      track.style.transform = 'translateX(' + (-shift) + 'px)';
+
+      prevBtn.disabled = (page === 0);
+      nextBtn.disabled = (page >= pages - 1);
+
+      // A row that all fits (e.g. exactly 3 Serious cards at 3-up) needs no controls.
+      var needsControls = pages > 1;
+      prevBtn.style.display = needsControls ? 'flex' : 'none';
+      nextBtn.style.display = needsControls ? 'flex' : 'none';
+
+      // Rebuild dots to match the current page count.
+      if (dotsWrap.childElementCount !== pages) {
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i < pages; i++) {
+          var d = document.createElement('button');
+          d.setAttribute('role', 'tab');
+          d.setAttribute('aria-label', 'Go to page ' + (i + 1));
+          (function (idx) { d.addEventListener('click', function () { page = idx; render(); }); })(i);
+          dotsWrap.appendChild(d);
+        }
+      }
+      Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+        d.classList.toggle('active', i === page);
+        d.setAttribute('aria-selected', i === page ? 'true' : 'false');
+      });
+      dotsWrap.style.display = needsControls ? 'flex' : 'none';
+    }
+
+    prevBtn.addEventListener('click', function () { page--; render(); });
+    nextBtn.addEventListener('click', function () { page++; render(); });
+
+    // Keyboard: left/right arrows page this carousel when focus is within it.
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { page++; render(); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { page--; render(); e.preventDefault(); }
     });
-    dotsWrap.style.display = pages > 1 ? 'flex' : 'none';
+
+    return render;
   }
 
-  prevBtn.addEventListener('click', function () { page--; render(); });
-  nextBtn.addEventListener('click', function () { page++; render(); });
-
-  // Keyboard: left/right arrows page the carousel when it has focus within.
-  carousel.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { page++; render(); e.preventDefault(); }
-    else if (e.key === 'ArrowLeft') { page--; render(); e.preventDefault(); }
-  });
+  var renderers = Array.prototype.map.call(
+    document.querySelectorAll('[data-carousel]'), initCarousel
+  ).filter(Boolean);
 
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 120);
+    resizeTimer = setTimeout(function () { renderers.forEach(function (r) { r(); }); }, 120);
   });
 
-  render();
+  renderers.forEach(function (r) { r(); });
 })();
 </script>
 
